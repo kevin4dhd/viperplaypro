@@ -1,0 +1,103 @@
+<style>
+    footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        max-width: 1200px;
+        width: 90%;
+        border-top: 1px solid #e5e5e5;
+        margin: auto;
+        color: #1A2026;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+    }
+
+    .row_footer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .row_footer .titulo_enlaces_footer {
+        padding: 0px;
+        margin: 0px;
+        font-size: 1rem;
+    }
+
+    .row_footer ul {
+        padding: 0px;
+        margin-top: 5px;
+        margin-bottom: 30px;
+    }
+
+    .row_footer li {
+        list-style: none;
+        margin-top: 5px;
+    }
+
+    .row_footer li a {
+        text-decoration: none;
+        font-size: 15px;
+        color: #636c72;
+    }
+
+    .row_footer li a:hover {
+        text-decoration: underline;
+    }
+
+    footer small {
+        color: #636c72;
+    }
+
+    @media (max-width: 600px) {
+        .row_footer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+    }
+</style>
+
+<footer>
+
+    <div class="row_footer">
+        <div>
+            <h5 class="titulo_enlaces_footer">Redes sociales</h5>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/viperplaytv/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                </li>
+
+                <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Twitter</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="titulo_enlaces_footer">Otros sitios</h5>
+            <ul>
+                <li>
+                    <a href="http://" target="_blank" rel="noopener noreferrer">Sitio 1</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div>
+            <h5 class="titulo_enlaces_footer">Viper Play</h5>
+            <ul>
+                <li>
+                    <a href="https://viperplay.net/dmca/index.html" target="_blank" rel="noopener noreferrer">DMCA</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <small>Viper Play
+        <script>document.write(new Date().getFullYear());</script> &copy; Todos los derechos reservados.
+    </small>
+
+</footer>

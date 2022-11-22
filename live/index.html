@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="propeller" content="f1b4375a7fb557b034a37adc3314bad8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+        integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+        integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Composite Start --> 
+    <!--div id="M832934ScriptRootC1370944"></div> 
+    <script src="https://jsc.adskeeper.co.uk/v/i/viperplay.net.1370944.js" async></script--> 
+    <!-- Composite End -->
+    <script>
+        $(document).ready(function () {
+            jQuery.loadScript = function (url, callback) {
+                jQuery.ajax({
+                    url: url,
+                    dataType: 'script',
+                    success: callback,
+                    async: true
+                });
+            }
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $.loadScript('//upgulpinon.com/1?z=4634204');
+                (function (s, u, z, p) { s.src = u, s.setAttribute('data-zone', z), p.appendChild(s); })(document.createElement('script'), 'https://iclickcdn.com/tag.min.js', 4848480, document.body || document.documentElement)
+            }/* else {
+                $.get("https://api.viperplay.net/anuncios", function (data) {
+                    try {
+                        let anuncio = data.data[0];
+                        let pr = Math.random() * 100;
+                        if (pr <= anuncio.probabilidad && anuncio.habilitado == 1) {
+                            $.magnificPopup.open({
+                                items: {
+                                    src: anuncio.imagen,
+                                },
+                                type: 'image',
+                                callbacks: {
+                                    updateStatus: function () {
+                                        var mfp = jQuery.magnificPopup.instance;
+                                        jQuery('.mfp-img').click(function () {
+                                            $.get("https://api.viperplay.net/anuncios/click", function (data) { });
+                                            window.open(anuncio.link, '_blank').focus();
+                                            mfp.close();
+                                        });
+                                    },
+                                }
+                            });
+                        } else {
+                            $.loadScript('//upgulpinon.com/1?z=4634204');
+                        }
+                    } catch (e) {
+                        $.loadScript('//upgulpinon.com/1?z=4634204');
+                    }
+                });
+            }*/
+        });
+    </script>
+    <title>Viper Play</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="referrer" content="never" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W40BNQL3GP"></script>
+    <script src="https://cdn.bitmovin.com/player/web/8/bitmovinplayer.js"></script>
+    <script src="https://kit.fontawesome.com/d47425e0a9.js" crossorigin="anonymous"></script>
+    <script>
+        var ID_VIDEO = window.location.hash.replace("#", "");
+        window.dataLayer = window.dataLayer || [];
+        var macLOCK = !ID_VIDEO.startsWith("????");
+        ID_VIDEO = ID_VIDEO.replace("????", "");
+        var src, cv, title, poster;
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-W40BNQL3GP', { 'page_title': ID_VIDEO });
+    </script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .contenedor {
+            background: white;
+            border: solid 1px rgba(0, 0, 0, 0.200);
+            max-width: 800px;
+            width: 95%;
+            border-radius: 5px;
+            margin: auto;
+            margin-bottom: 50px;
+            margin-top: 100px;
+        }
+
+        .btn_recargar {
+            width: 100%;
+            color: white;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            background: #eb4d4b;
+            border: none;
+        }
+
+        .player-container {
+            max-width: 800px;
+            width: 100%;
+            height: 450px;
+            margin: auto;
+            text-align: center;
+            background: black;
+            /* display: flex;
+            justify-content: center;
+            align-items: center*/
+        }
+
+        .player-container video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-video {
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .header-video .aviso {
+            background: rgba(255, 0, 0, 0.137);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-video .aviso span {
+            font-size: 15px;
+        }
+
+        .header-video .aviso a {
+            color: rgb(0, 98, 255);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .titulo {
+            border-bottom: 1px rgba(0, 0, 0, 0.400) solid;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+        }
+
+
+
+        .titulo h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+
+            margin: 0px;
+        }
+
+        .item_video {
+            max-width: 800px;
+            width: 95%;
+            margin: auto;
+            padding-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .item_video .descripcion {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .item_video .descripcion .texto_descripcion {
+            color: rgba(0, 0, 0, 0.550);
+            font-size: 1rem;
+        }
+
+        .cebecera {
+            position: fixed;
+            background: rgb(255, 255, 255);
+            height: 60px;
+            width: 100%;
+            z-index: 9;
+            border-bottom: 1px solid rgba(139, 139, 139, 0.200);
+            top: 0px;
+            box-shadow: 0px 0px 10px rgba(139, 139, 139, 0.100);
+        }
+
+        .cebecera .logo {
+            margin-top: 9px;
+            margin-left: 30px
+        }
+
+        .cebecera .logo a {
+            text-decoration: none;
+            font-size: 1.7rem;
+            color: #e02611;
+            font-family: "Fredoka One", cursive;
+        }
+
+        @media (max-width:900px) {
+            .player-container {
+                height: 300px;
+            }
+
+
+            .cebecera .logo {
+                margin-left: 15px;
+            }
+
+            .titulo h1 {
+                font-size: 1.3rem;
+
+            }
+        }
+
+        /*style al formato M3U8*/
+        .M3U8 {
+            object-fit: contain;
+        }
+
+        .bmpui-ui-watermark {
+            display: none;
+        }
+
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker {
+            background-color: #FF0000;
+        }
+
+        .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition,
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition {
+            background-color: #FF0000;
+        }
+
+        .bmpui-ui-seekbar .bmpui-seekbar .bmpui-seekbar-playbackposition-marker,
+        .bmpui-ui-volumeslider .bmpui-seekbar .bmpui-seekbar-playbackposition-marker {
+            border-color: #FF0000;
+            background-color: #FF0000;
+        }
+
+        .like__btn {
+            padding: 10px 15px;
+            background: #0080ff;
+            font-size: 18px;
+            font-family: "Roboto", sans-serif;
+            border-radius: 5px;
+            color: #e8efff;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dislike__btn {
+            padding: 10px 15px;
+            background: #ff0000;
+            font-size: 18px;
+            font-family: "Roboto", sans-serif;
+            border-radius: 5px;
+            color: #e8efff;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button_paypal {
+            float: right;
+            margin-top: 2px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="cebecera">
+        <h1 class="logo"><a href="/">ViperPlay.net</a></h1>
+    </header>
+
+    <div class="contenedor">
+        <header class="header-video">
+            <div class="titulo">
+            </div>
+        </header>
+
+        <div class="player-container">
+
+            <div id="player"></div>
+
+            <div id="bitmovin-94527"></div>
+            <div id="ppp"></div>
+            <div id="parent">
+            </div>
+
+            <script type="text/javascript">
+
+                function initPlayer(url_video, url_licensia, descripcion) {
+                    var container = document.getElementById('bitmovin-94527');
+                    function override(url) {
+                        if (url.indexOf("licensing.bitmovin.com/licensing") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+                        if (url.indexOf("licensing.bitmovin.com/impression") > -1) return "data:text/plain;charset=utf-8;base64,eyJzdGF0dXMiOiJncmFudGVkIiwibWVzc2FnZSI6IlRoZXJlIHlvdSBnby4ifQ==";
+                        return url;
+                    }
+                    var opens = XMLHttpRequest.prototype.open;
+                    XMLHttpRequest.prototype.open = function () {
+                        var url = override(arguments[1]);
+                        arguments[1] = url;
+                        return opens.apply(this, arguments);
+                    }
+                    const config = {
+                        key: "11d3698c-efdf-42f1-8769-54663995de2b",
+                        analytics: false, cast: { enable: true },
+                        playback: {
+                            autoplay: true,
+                            muted: false
+                        },
+                        style: { width: '100%' },
+                        advertising: {
+                            adBreaks: [{ tag: { url: '', type: 'vast' }, id: 'pre-roll-ad', position: 'pre', }], beforeInitialization: function (settings) { settings.setDisableCustomPlaybackForIOS10Plus(true); },
+                            beforeInitialization: function (settings) {
+                                settings.setDisableCustomPlaybackForIOS10Plus(true);
+                            },
+                            onAdsManagerAvailable: function (adsManager) {
+
+                                // Get a reference to an HTML element representing the ad
+                                var videoElement = player.getVideoElement();
+
+                                // Not Needed because the player already exposes the ad manager.
+                                // var adsRenderingSettings = new google.ima.AdsRenderingSettings();
+                                // var adsManager = adsManagerLoadedEvent.getAdsManager(videoElement, adsRenderingSettings);
+
+                                // Create your config object
+                                const configSdkIma = { partner: 'turner', anId: '930500', campId: '640x480', chanId: '21841158045', pubOrder: 'in-stream video', custom: 'pre-roll' };
+
+                                // Init IAS Integration
+                                googleImaVansAdapter.init(google, adsManager, videoElement, configSdkIma);
+                            }
+
+                        }
+                    }
+
+                    var source;
+                    if (url_video.endsWith('.mpd') || descripcion == "MPD") {
+                        source = {
+                            dash: url_video,
+                            drm: {
+                                widevine: {
+                                    LA_URL: url_licensia
+                                },
+                            },
+                            title: "Viper Play",
+                            poster: ""
+                        }
+                    } else {
+                        source = {
+                            hls: url_video,
+                            drm: {
+                                widevine: {
+                                    LA_URL: url_licensia
+                                },
+                            },
+                            title: "Viper Play",
+                            poster: ""
+                        }
+                    }
+
+
+
+                    var player = new bitmovin.player.Player(container, config);
+                    player.load(source);
+
+
+                    var turner_metadata = { "trackAction": [] };
+                    window.setPlayerPlaybackFinished = false;
+                    window.setEventContentCompleted = true;
+
+                    player.on(bitmovin.player.PlayerEvent.Ready, function (data) {
+                        turner_metadata.trackAction.push({
+                            "type": "video",
+                            "subtype": "Player_Ready",
+                            "data": {
+                                "playerid": "bitmovin-94527",
+                            }
+                        });
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.Play, function (data) {
+                        //console.log("On Play " + JSON.stringify(data));
+
+                        if (data.time == 0 && setPlayerPlaybackFinished) {
+                            //console.log("On rePlay " + JSON.stringify(data) + "-" + setPlayerPlaybackFinished);
+                            turner_metadata.trackAction.push({
+                                "type": "video",
+                                "subtype": "Player_Ready",
+                                "data": {
+                                    "playerid": "bitmovin-94527",
+                                    "content_duration": 0,
+
+                                }
+                            });
+                        }
+
+                        var eventPlay = "Media_Resumed";
+                        if (data.time == 0) eventPlay = "Media_Started";
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": eventPlay, "data": {} });
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.Paused, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Paused", "data": {} });
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.StallStarted, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Buffering_Started", "data": {} });
+                    });
+                    player.on(bitmovin.player.PlayerEvent.StallEnded, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Buffering_Finished", "data": {} });
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.Seek, function (data) {
+                        //console.log("On Seek: " + JSON.stringify(data)); xD
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Seeking_Started", "data": {} });
+                    });
+                    player.on(bitmovin.player.PlayerEvent.Seeked, function (data) {
+                        //console.log("On Seeked: " + JSON.stringify(data)); 
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Seeking_Finished", "data": {} });
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.PlaybackFinished, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Media_Finished", "data": {} });
+                        window.setPlayerPlaybackFinished = true; //set finish player 
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.AdStarted, function (data) {
+                        //console.log("On Ad Started: " + JSON.stringify(data)); 
+                        //console.log("On Ad Started: " + JSON.stringify(player.ads.getActiveAdBreak()));
+                        var getAdStartedActiveAdBreak = player.ads.getActiveAdBreak();
+                        window.setPlayerActiveAdBreakPosition = getAdStartedActiveAdBreak.position; //set position 
+                        turner_metadata.trackAction.push({
+                            "type": "video",
+                            "subtype": "Ad_Started",
+                            "data": {
+                                "ad_id": getAdStartedActiveAdBreak.ads[0] ? getAdStartedActiveAdBreak.ads[0].id : "0",
+                                "ad_duration": data.duration,
+                                "ad_type": getAdStartedActiveAdBreak.id
+                            }
+                        });
+                    });
+                    player.on(bitmovin.player.PlayerEvent.AdSkipped, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Ad_Skipped", "data": {} });
+                    });
+                    player.on(bitmovin.player.PlayerEvent.AdFinished, function (data) {
+                        turner_metadata.trackAction.push({ "type": "video", "subtype": "Ad_Finished", "data": {} });
+                        //console.log("On Ad Finished: " + setPlayerActiveAdBreakPosition);
+
+                        if (setPlayerActiveAdBreakPosition == 'pos') {
+                            turner_metadata.trackAction.push({ "type": "video", "subtype": "Content_Completed", "data": {} });
+                            window.setEventContentCompleted = false; //set finish player 
+                        }
+                    });
+
+                    player.on(bitmovin.player.PlayerEvent.PlaybackFinished, function (data) {
+
+                        if (setEventContentCompleted) {
+                            turner_metadata.trackAction.push({ "type": "video", "subtype": "Content_Completed", "data": {} });
+                            window.setEventContentCompleted = true; //set finish player 
+                        }
+                    });
+                    /*window.turner_metadata.currentTime = 1;
+                    player.on(bitmovin.player.PlayerEvent.TimeChanged, function (data) {
+                        //console.log("On TimeChanged: " + JSON.stringify(data));
+                        window.turner_metadata.currentTime = Math.round(data.time);
+                        //console.log("turner_metadata.currentTime: " +  Math.round(turner_metadata.currentTime));
+                    });*/
+                }
+
+            </script>
+
+        </div>
+
+        <div class="item_video">
+            <div class="a2a_kit a2a_kit_size_24 a2a_default_style">
+                <a class="a2a_button_facebook a2a_counter"></a>
+                <a class="a2a_button_whatsapp a2a_counter"></a>
+                <a class="a2a_button_twitter a2a_counter"></a>
+                <a class="a2a_button_telegram a2a_counter"></a>
+                <a class="a2a_button_more a2a_counter"></a>
+            </div>
+            <button onclick="location.reload()" class="btn_recargar">Recargar reproductor</button>
+            <button class="like__btn">
+                <span id="icon"><i class="fas fa-thumbs-up"></i></span>
+                <span id="countLike">0</span>
+            </button>
+            <button class="dislike__btn">
+                <span id="icon"><i class="fas fa-thumbs-down"></i></span>
+                <span id="countDislike">0</span>
+            </button>
+            <!--form class="button_paypal" action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="hosted_button_id" value="ZJXCLX59T2DRY" />
+                <input type="image" src="https://www.paypalobjects.com/webstatic/mktg/merchant_portal/button/donate.es.png" border="0"
+                    name="submit" title="PayPal - The safer, easier way to pay online!"
+                    alt="Donate with PayPal button" height="40"/>
+                <img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+            </form-->
+            <br>
+            <div class="descripcion">
+                <span class="texto_descripcion">Descripción:</span>
+                <br>
+            </div>
+            <!--span class="texto_descripcion" id="visitas">Visitas: 0</span>
+            <br-->
+        </div>
+    </div>
+
+    <!-- Composite Start -->
+    <!--div id="M832934ScriptRootC1363557"></div>
+    <script src="https://jsc.adskeeper.co.uk/v/i/viperplay.net.1363557.js" async></script-->
+    <!-- Composite End -->
+
+    <!--FOOTER-->
+    <style>
+        footer {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            max-width: 1200px;
+            width: 90%;
+            border-top: 1px solid #e5e5e5;
+            margin: auto;
+            color: #1A2026;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .row_footer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+
+        .row_footer .titulo_enlaces_footer {
+            padding: 0px;
+            margin: 0px;
+            font-size: 1rem;
+        }
+
+        .row_footer ul {
+            padding: 0px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .row_footer li {
+            list-style: none;
+            margin-top: 5px;
+        }
+
+        .row_footer li a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #636c72;
+        }
+
+        .row_footer li a:hover {
+            text-decoration: underline;
+        }
+
+        footer small {
+            color: #636c72;
+        }
+
+        @media (max-width: 600px) {
+            .row_footer {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+            }
+        }
+    </style>
+    <footer>
+        <div class="row_footer">
+            <div>
+                <h5 class="titulo_enlaces_footer">Redes sociales</h5>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/viperplaytv/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="titulo_enlaces_footer">Otros sitios</h5>
+                <ul>
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Sitio 1</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="titulo_enlaces_footer">Viper Play</h5>
+                <ul>
+                    <li>
+                        <a href="https://viperplay.net/dmca/index.html" target="_blank"
+                            rel="noopener noreferrer">DMCA</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <small>Viper Play
+            <script>document.write(new Date().getFullYear());</script> &copy; Todos los derechos reservados.
+        </small>
+    </footer>
+    <!--FOOTER-->
+
+    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <script>
+        var a2a_config = a2a_config || {};
+        a2a_config.linkname = "Mira todos los Eventos deportivos en Vivo y Gratis en:";
+        a2a_config.linkurl = window.location.href;
+        a2a_config.onclick = 1;
+        a2a_config.locale = "es";
+        a2a_config.num_services = 4;
+        var clickButtonLike = false;
+        var likes = 0;
+        var dislikes = 0;
+        $(document).ready(function () {
+            $.get("https://api.viperplay.net/canal/" + ID_VIDEO, function (data) {
+
+                let data2 = data.data2;
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    jQuery.loadScript = function (url, callback) {
+                        jQuery.ajax({
+                            url: url,
+                            dataType: 'script',
+                            success: callback,
+                            async: true
+                        });
+                    }
+                    try {
+                        let anuncio = data2[0];
+                        let pr = Math.random() * 100;
+                        if (pr <= anuncio.probabilidad && anuncio.habilitado == 1) {
+                            $.magnificPopup.open({
+                                items: {
+                                    src: anuncio.imagen,
+                                },
+                                type: 'image',
+                                callbacks: {
+                                    updateStatus: function () {
+                                        var mfp = jQuery.magnificPopup.instance;
+                                        jQuery('.mfp-img').click(function () {
+                                            $.get("https://api.viperplay.net/anuncios/click", function (data) { });
+                                            window.open(anuncio.link, '_blank').focus();
+                                            mfp.close();
+                                        });
+                                    },
+                                }
+                            });
+                        } else {
+                            $.loadScript('//upgulpinon.com/1?z=4634204');
+                        }
+                    } catch (e) {
+                        $.loadScript('//upgulpinon.com/1?z=4634204');
+                    }
+                }
+
+                if (data.data.length <= 0) {
+                    document.location.href = "/";
+                    return;
+                }
+                let canal = data.data[0];
+                if (macLOCK) {
+                    var mac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+                    if (canal.dispositivo == "TODOS") {
+                    } else if (canal.dispositivo == "IOS" && mac) {
+                    } else if (canal.dispositivo == "ANDROID" && !mac) {
+                    } else if (canal.dispositivo == "SOLO ANDROID" && /Android|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                    } else {
+                        document.location.href = "/";
+                    }
+                }
+                $(".titulo").append(`<h1>` + canal.titulo + `</h1>`);
+                $(".descripcion").append(canal.descripcion);
+                //$("#visitas").text("Visitas: "+canal.visitas);
+                likes = canal.likes;
+                dislikes = canal.dislikes;
+                $("#countLike").text(likes);
+                $("#countDislike").text(dislikes);
+                clickButtonLike = true;
+                if (canal.url_video.startsWith("http")) {
+                    let descripcionClear = canal.descripcion.replace("<div>", "").replace("</div>", "");
+                    initPlayer(canal.url_video, canal.license, descripcionClear);
+                } else {
+                    src = canal.url_video;
+                    cv = canal.license;
+                    title = "ViperPlay";
+                    poster = canal.imagen;
+                    jQuery.loadScript = function (url, callback) {
+                        jQuery.ajax({
+                            url: url,
+                            dataType: 'script',
+                            success: callback,
+                            async: true
+                        });
+                    }
+                    $.loadScript('https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js', () => {
+                        $.loadScript('https://viperplay.net/love.js');
+                    });
+                }
+            });
+            $(".like__btn").click(function () {
+                if (clickButtonLike) {
+                    clickButtonLike = false;
+                    $("#countLike").text(likes + 1);
+                    $.get("https://api.viperplay.net/canal/like/" + ID_VIDEO, function (data) { });
+                }
+            });
+            $(".dislike__btn").click(function () {
+                if (clickButtonLike) {
+                    clickButtonLike = false;
+                    $("#countDislike").text(dislikes + 1);
+                    $.get("https://api.viperplay.net/canal/dislike/" + ID_VIDEO, function (data) { });
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

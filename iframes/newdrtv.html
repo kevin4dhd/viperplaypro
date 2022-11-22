@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <!--script>if (window == window.top) document.location = "/"</script-->
+    <link rel="stylesheet" href="https://cloudstream.to/css/embed.min.css?v=0.4" />
+</head>
+
+<body>
+    <div class="jwplayer jw-reset jw-skin-glow player" id="player"></div>
+    <video-js id="player2" class="vjs-big-play-centered vjs-default-skin player" style="display: none" controls>
+    </video-js>
+    <div id="btn-unmute" onclick="WSUnmute()">CLICK HERE TO UNMUTE</div>
+    <div class="tb stream-offline">
+        <div class="tb-col">
+            <a href="/" target="_blank"><img src="/imgs/home/cloudstream.png" class="logo" /></a>
+            <h3>OoPS!</h3>
+            <h2>STREAM IS OFFLINE</h2>
+            <p>Retrying in <span class="counter"></span> seconds</p>
+        </div>
+    </div>
+    <script src="https://cloudstream.to/js/jquery.min.js"></script>
+    <script>
+        var WSreloadCounter = false,
+            WSnTries = 0,
+            videoStarted = false,
+            startMuted = startMuted();
+
+        function errorPlaying() {
+            $(".stream-offline .counter").text(10);
+            $(".stream-offline").css("display", "table");
+            if (!WSreloadCounter) WSreloadCounter = setInterval(function() {
+                var a = $(".stream-offline .counter").text();
+                if (a > 1) {
+                    a--;
+                    $(".stream-offline .counter").text(a)
+                } else {
+                    clearInterval(WSreloadCounter);
+                    WSreloadCounter = false;
+                    WSnTries++;
+                    if (WSnTries < 10) {
+                        WSreloadStream();
+                    } else {
+                        window.location.reload()
+                    }
+                }
+            }, 1000)
+        }
+
+        function startMuted() {
+            var b = /constructor/i.test(window.HTMLElement) || (function(c) {
+                return c.toString() === "[object SafariRemoteNotification]"
+            })(!window.safari || (typeof safari !== "undefined" && safari.pushNotification));
+            if (b) {
+                return true
+            }
+            if (window.chrome && getChromeVersion() >= 66) {
+                return true
+            }
+            var ff = navigator.userAgent.match(/firefox\/([0-9]{2,})/i);
+            if (ff && parseInt(ff[1]) >= 66) {
+                return true
+            }
+            var a = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
+            if (a) {
+                return true
+            }
+            return false
+        }
+
+        function getChromeVersion() {
+            var b = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+            return b ? parseInt(b[2], 10) : false
+        };
+
+        function abd() {
+            WSreloadStream = function() {
+                return
+            };
+            if (player) player.stop();
+            $(".player").remove();
+            clearInterval(WSreloadCounter);
+            $("body").html('<div class="tb stream-offline" style="display:table"><div class="tb-col"><a href="/" target="_blank"><img src="/imgs/logo2.png" /></a><h2>SANDBOX IFRAME NOT ALLOWED</h2><div style="padding-top: 0.8em">WATCH ON THE FOLLOWING LINK:</div><input value="http://' + location.hostname + '/live/dyzqotv15miwft" onclick="this.select()" type="text" style="width:280px;border:0;background:none;color:#12e5a8;margin-top:20px;font-size:15px;text-align:center;"/></div></div>')
+        }
+    </script>
+    <script src="https://swarm.video/wigistream.js?version=0.0.70"></script>
+    <script>
+        if (typeof p2pml != "undefined") {
+            var engine = new p2pml.hlsjs.Engine({
+                segments: {
+                    swarmId: "dyzqotv15miwft",
+                    forwardSegmentCount: 50,
+                },
+                loader: {
+                    // how long to store the downloaded segments for P2P sharing
+                    // cachedSegmentExpiration:86400000,
+                    // count of the downloaded segments to store for P2P sharing
+                    // cachedSegmentsCount:1000,
+
+                    // requiredSegmentsPriority:4,
+
+                    // each 1 second each of 10 segments ahead of playhead position gets 6% probability for random HTTP download
+                    // httpDownloadMaxPriority:9,
+                    // httpDownloadProbability:0.06,
+                    // httpDownloadProbabilityInterval: 1000,
+
+                    // disallow randomly download segments over HTTP if there are no connected peers
+                    // httpDownloadProbabilitySkipIfNoPeers: true,
+
+                    // P2P will try to download only first 51 segment ahead of playhead position
+                    // p2pDownloadMaxPriority: 50,
+
+                    // 1 second timeout before retrying HTTP download of a segment in case of an error
+                    // httpFailedSegmentTimeout:1000,
+
+                    // number of simultaneous downloads for P2P and HTTP methods
+                    // simultaneousP2PDownloads:10,
+                    // simultaneousHttpDownloads:3,
+
+                    // allow to continue aborted P2P downloads via HTTP
+                    httpUseRanges: true,
+                    WaitForTracker: true,
+                    WaitForTrackerCounter: 4500,
+                },
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script>
+        eval(function(p, a, c, k, e, d) {
+            e = function(c) {
+                return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
+            };
+            if (!''.replace(/^/, String)) {
+                while (c--) {
+                    d[e(c)] = k[c] || e(c)
+                }
+                k = [function(e) {
+                    return d[e]
+                }];
+                e = function() {
+                    return '\\w+'
+                };
+                c = 1
+            };
+            while (c--) {
+                if (k[c]) {
+                    p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c])
+                }
+            }
+            return p
+        }('4 2;4 2;4 a={1X:7,};4 d=v;4 8="J://U.W.N:M/L/A.x?s=k&e=z";5(O E!="B"&&O f!="B"){5(f.w.13.15()){d=i;a["16"]=E.17()}18{8="J://1a.1b.N:M/L/A.x?s=k&e=z"}}$(g).1e(3(){2=o m.l({1d:8,1c:"#2",I:"t%",H:"t%",19:{a:a,},11:v,14:p,12:"Y",10:"",F:"1",Q:"",R:{S:3(e){T()},X:3(e){c(3(){$(".b-r").j()},Z);5(!n){n=i;c(3(){4 h=g.P("V")[0],s=g.1g("1f");s.1i="1u/1I";s.1J=i;s.8="//1K.1L/1M/1N/1O/1P.1h";h.1R(s)},1S);5(p)$("#q-9").u()}},1T:3(e){$(".b-r").u()},1U:3(e){$("#q-9").j()},}});5(d){f.w.1V(2)}c(3(){2.D()},1W)});3 1H(){$(".b-1G").1F("1E","1k");4 6=2.1l(2);6=o m.l(6.1m);2.1n();2=6;2.D();2.9()}3 1o(){2.9()}$("1p").1q(\'<y K="K:1r/1s;1j,1t" I="G" H="G" 1v="F:1w;1x:-C;1y:-C;1z:1A;" 1B="1C();$(1D).1Q()"></y>\')', 62, 122, '||player|function|var|if|newplayer||src|unmute|hlsjsConfig|stream|setTimeout|p2p||p2pml|document||true|fadeOut|7zOVge0FfHAMH5WDtT5A2g|Player|Clappr|videoStarted|new|startMuted|btn|logo||100|fadeIn|false|hlsjs|m3u8|object|1642725260|dyzqotv15miwft|undefined|500px|play|engine|position|1px|height|width|https|data|hls|8443|net|typeof|getElementsByTagName|watermarkLink|events|onError|errorPlaying|jtbyeqpqtykwdiag|head|wzcdn804|onPlay|bestfit|1000|watermark|autoPlay|stretching|Engine|mute|isSupported|loader|createLoaderClass|else|playback|okbdyeowhjxymkxb|wzcdn774|parentId|source|ready|script|createElement|js|type|base64|none|configure|options|destroy|WSUnmute|body|append|application|pdf|aG1t|text|style|absolute|top|left|visibility|hidden|onerror|abd|this|display|css|offline|WSreloadStream|javascript|async|hypocrisyconnate|com|c5|93|d9|c593d9644ae5daa7624663fb15477b8e|remove|appendChild|15000|onPause|onVolumeUpdate|initClapprPlayer|3000|liveSyncDurationCount'.split('|'), 0, {}))
+    </script>
+    <script>
+        eval(function(p, a, c, k, e, d) {
+            e = function(c) {
+                return c.toString(36)
+            };
+            if (!''.replace(/^/, String)) {
+                while (c--) {
+                    d[e(c)] = k[c] || e(c)
+                }
+                k = [function(e) {
+                    return d[e]
+                }];
+                e = function() {
+                    return '\\w+'
+                };
+                c = 1
+            };
+            while (c--) {
+                if (k[c]) {
+                    p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c])
+                }
+            }
+            return p
+        }('z(k(){$("m").l("<1 7=\\"f\\" 2=\\"4\\" 5=\\"//j.i/h/o\\" 6=\\"8:3\\" 9=\\"0-a-b 0-c 0-d 0-e\\"></1><1 7=\\"f\\" 2=\\"4\\" 5=\\"g://n.q/r?s=t&u=v\\" 6=\\"8:3\\" 9=\\"0-a-b 0-c 0-d 0-e\\"></1><1 7=\\"f\\" 2=\\"4\\" 5=\\"g://w.x/y\\" 6=\\"8:3\\" 9=\\"0-a-b 0-c 0-d 0-e\\"></1>")},p);', 36, 36, 'allow|iframe|height|none|768|src|style|width|display|sandbox|same|origin|scripts|popups|forms|1024|https|iBsoG511Gsf7|com|khandragthresh|function|append|body|innyweakela|28749|20000|co|redirect|tid|756113|file|Watch_Live|zap|buzz|OOJwR8X|setTimeout'.split('|'), 0, {}))
+    </script>
+    <!--script type="text/javascript" src="//cdnondemand.org/script/su.js" zid="4078839" admn="Y2hndXJsX3Bieg==" admc="ZnpudGJxX3Bieg==" did="MiIvD"></script-->
+    <script type="text/javascript">
+        (function() {
+            setTimeout(function() {
+                if (!window["s2ss120"]) {
+                    let e = document.querySelector('script[did="MiIvD"]'),
+                        t = !!e.hasAttribute("admc") && function(e) {
+                            let t = atob(e).replace(/[a-zA-Z]/g, function(e) {
+                                var t = e <= "Z" ? 65 : 97;
+                                return String.fromCharCode(t + (e.charCodeAt(0) - t + 13) % 26)
+                            });
+                            return t.replaceAll("_", ".")
+                        }(e.getAttribute("admc")),
+                        r = e.getAttribute("src"),
+                        a = e.parentElement,
+                        c = document.createElement("script");
+                    ! function(e, t) {
+                        let r, a = ["did", "admc", "src"],
+                            c = Array.prototype.slice.call(t.attributes);
+                        for (; r = c.pop();) - 1 === a.indexOf(r.nodeName) && e.setAttribute(r.nodeName, r.nodeValue)
+                    }(c, e), c.src = (d = r, "//" + t + d.replace(/^.*\/\/[^\/]+/, "")), c.setAttribute("sadbl", 1), a.removeChild(e), a.appendChild(c)
+                }
+                var d
+            }, 150);
+            document.body.addEventListener("click", function(e) {
+                window["s2ss120ff"] instanceof Function && window["s2ss120ff"](e)
+            });
+        })();
+    </script>
+    <!--script type="text/javascript">
+        setTimeout(function() {
+            var h = document.getElementsByTagName("head")[0],
+                s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "//kenskitscurt.com/fZy3h3WFsEwfy7CT/28750";
+            h.appendChild(s);
+        }, 700000);
+    </script-->
+
+    <!--div style="display:none;"><img id="vw24" src="//whos.amung.us/cwidget/baz78k0rc0/000000ffffff.png"></div>
+    <script>
+        var vw24 = document.getElementById("vw24");
+        setInterval(function() {
+            vw24.src = "//whos.amung.us/cwidget/baz78k0rc0/000000ffffff.png?" + new Date().getTime()
+        }, 300000);
+    </script-->
+
+</body>
+
+</html>

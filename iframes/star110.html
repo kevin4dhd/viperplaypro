@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+</head>       
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<div id="player"></div>
+<script>
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "Viper Ply tv| Star+",
+            "description": "Mirar Star+ de manera gratuita",
+            "image": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/92F33655BD1E845FA7BBF10E19170931B2D78FFBCDD3532AE064991769208226/scale?width=1920&aspectRatio=1.78&format=jpeg",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://live-llc-sa-east-2.media.starott.com/gru1/qb01/starplus/event/2022/06/07/Italia_x_Hungria_20220607_1654621259046/ctr-all-sliding.m3u8?v=1&hash=842d1e78e27282118f99b036d7eb7c785fb0fa03',
+                    "drm": {
+                        "clearkey": { "keyId": "d6e941dda7e1472e827d5bd9b5d9ef25", "key": "ee3d1dbb5ffefa76a378fd6c0b781f76" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        autostart: false,
+        cast: {},
+        sharing: {}
+    });
+</script>
+</html>

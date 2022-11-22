@@ -1,0 +1,219 @@
+<html lang="en">
+    <title></title>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="noindex,nofollow" name="robots">
+    <meta content="no-referrer-when-downgrade" name="referrer">
+    <meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy">
+    <link href="https://ply.go9.online" rel="preconnect" crossorigin>
+    <link href="https://cdn.liveply.me/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <style>
+        body {
+            background-color: #000;
+            font-size: 14px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            width: 100%;
+            border: 0 none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+    <style>
+        .jw-display-controls .jw-display-icon-container {
+            background-color: #4caf50;
+            border-radius: 10%;
+        }
+
+        .jw-display .jw-icon {
+            width: 148px!important;
+        }
+
+        .jw-display-controls .jw-display-icon-container .jw-icon {
+            color: #fff;
+        }
+
+        .jw-rightclick {
+            display: none!important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .jw-display .jw-icon {
+                width:77px!important;
+            }
+        }
+    </style>
+    <script src="//cdn.jsdelivr.net/npm/hls.js@0.14.17"></script>
+    <script src="//cdn.jsdelivr.net/npm/@hola.org/jwplayer-hlsjs@latest/dist/jwplayer.hlsjs.min.js"></script>
+    <script src="//swarm.video/private/vip.js"></script>
+    <script src="https://cdn.liveply.me/scripts/jquery.js"></script>
+    <script src="https://cdn.liveply.me/scripts/player/8.23.2/jwplayer.min.js"></script>
+</head>
+<body>
+    <div id="e1q7o8r9j5" class="banner-300"></div>
+    <script>
+        const formAuthUrl = function (data) {
+   if (typeof data.scode === 'undefined' || typeof data.ts === 'undefined') {
+      return '';
+   }
+   return window.atob(authCallUrl) + '?stream=' + unqiueId + '&scode=' + data.scode + '&expires=' + data.ts;
+};
+const forceKillplayer = function () {
+   authUrl = '';
+   playerObj.stop();
+   playerObj.remove();
+   clearTimeout(deauthcron);
+   ajxRequest.abort();
+   if (playerObj.destroy) {
+      playerObj.destroy();
+   }
+   if (doRedirect) {
+      window.location = 'techissue.html';
+   }
+};
+let deauthcron;
+const enablePeer = 1;
+const enablePeerCache = 1;
+const checkPeer = p2pml.hlsjs.Engine.isSupported();
+const doRedirect = 1;
+const doAuthCheck = function () {
+   if (checkPeer && authUrl !== '') {
+      ajxRequest = $.ajax({
+         url: authUrl,
+         dataType: 'json',
+         timeout: 5000,
+         success: function (response) {
+            authUrl = formAuthUrl(response);
+            deauthcron = setTimeout(doAuthCheck, 300000);
+         },
+         error: function () {
+            if (failCount < 2) {
+               deauthcron = setTimeout(doAuthCheck, 5000);
+               failCount++;
+            } else {
+               forceKillplayer();
+            }
+         },
+         statusCode: {
+            444: function () {
+               forceKillplayer();
+            },
+            410: function () {
+               forceKillplayer();
+            },
+            403: function () {
+               forceKillplayer();
+            }
+         }
+      });
+   }
+};
+const authCallUrl = 'aHR0cHM6Ly9rZXkuc2Vja2V5c2Vydi5tZQ==';
+const playerId = 'e1q7o8r9j5';
+const unqiueId = 'mop05exepelilege7u60';
+const playUrl = 'aHR0cHM6Ly9oZy1uMi5zb290aWNlLmNvbS9wbHl2aXZvL21vcDA1ZXhlcGVsaWxlZ2U3dTYwL2NodW5rbGlzdC5tM3U4';
+const kelVal = 'y9u1y8p1b3w7m1';
+const jwbasepath = 'https://cdn.liveply.me/scripts/player/8.23.2/';
+let failCount = 1;
+let ajxRequest;
+let authUrl = formAuthUrl({
+   "scode": "SMQBhQEZYbNOIKWeM4ZKfA",
+   "ts": 1658422897
+});
+doAuthCheck();
+const ratio = $(window).width() / $(window).height();
+const aspectRatio = ratio < 1.5 ? '4:3' : '16:9';
+let sWarmEngine = new p2pml.hlsjs.Engine({
+   segments: {
+      swarmId: unqiueId
+   },
+   loader: {
+      trackerAnnounce: ['wss://fast.swarm.video'],
+      httpUseRanges: true,
+      WaitForTracker: enablePeerCache,
+      WaitForTrackerCounter: 1000
+   }
+});
+const playerObj = jwplayer(playerId);
+playerObj.setup({
+   file: window.atob(playUrl),
+   controls: true,
+   autostart: false,
+   mute: false,
+   hlshtml: true,
+   image: 'https://cdn.liveply.me/images/thumb/mop05exepelilege7u60.jpeg',
+   responsive: true,
+   renderCaptionsNatively: false,
+   liveSyncDuration: 30,
+   aspectratio: aspectRatio,
+   width: '100%',
+   type: 'hls',
+   androidhls: true,
+   loadAndParseHlsMetadata: false,
+   key: kelVal,
+   primary: 'html5',
+   preload: 'none',
+   hlsjsdefault: true,
+   cast: {},
+   base: jwbasepath
+});
+playerObj.on('error', forceKillplayer);
+let debounce;
+playerObj.on('buffer', function () {
+   debounce = setTimeout(forceKillplayer, 15000);
+});
+playerObj.on('play', function () {
+   clearTimeout(debounce);
+});
+jwplayer_hls_provider.attach();
+p2pml.hlsjs.initJwPlayer(playerObj, {
+   liveSyncDurationCount: 7,
+   loader: sWarmEngine.createLoaderClass()
+});
+setTimeout(forceKillplayer, 2 * 3600000);
+const fakelog = function () {};
+window['console']['log'] = fakelog;
+setInterval(function () {
+   let startTime = performance.now();
+   debugger;
+   let stopTime = performance.now();
+   if ((stopTime - startTime) > 100) {
+      window.location = 'https://www.youtube.com/watch?v=rqX65RHTWrA'
+   }
+}, 100);
+! function () {
+   function detectDevTool(allow) {
+      if (isNaN(+allow)) allow = 100;
+      let start = +new Date();
+      debugger;
+      let end = +new Date();
+      if (isNaN(start) || isNaN(end) || end - start > allow) {
+         window.location = 'https://www.youtube.com/watch?v=rqX65RHTWrA'
+      }
+   }
+   if (window.attachEvent) {
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+         detectDevTool();
+         window.attachEvent('onresize', detectDevTool);
+         window.attachEvent('onmousemove', detectDevTool);
+         window.attachEvent('onfocus', detectDevTool);
+         window.attachEvent('onblur', detectDevTool);
+      } else {
+         setTimeout(argument.callee, 0);
+      }
+   } else {
+      window.addEventListener('load', detectDevTool);
+      window.addEventListener('resize', detectDevTool);
+      window.addEventListener('mousemove', detectDevTool);
+      window.addEventListener('focus', detectDevTool);
+      window.addEventListener('blur', detectDevTool);
+   }
+}();
+    </script>
+</body>
+</html>

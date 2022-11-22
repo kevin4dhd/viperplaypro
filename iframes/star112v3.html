@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+</head>       
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<div id="player"></div>
+<script>
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "Mega Deportes | Star+",
+            "description": "Mirar Star+ de manera gratuita",
+            "image": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/A51C642026D4FF72DF7AE40803D3CDC4AB96E877DA3BE049BD770B6369D01552/scale?width=1920&aspectRatio=1.78&format=jpeg",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://live-llc-sa-east-2.media.starott.com/clt2/va01/starplus/event/2022/06/08/Scotland_vs_Armenia_20220608_1654708310365/ctr-all-sliding.m3u8?v=1&hash=0cd6821bb9207b8815785fae721b2f83640ab68b',
+                    "drm": {
+                        "clearkey": { "keyId": "8b9e10d2fb024fceb6a41c25e20c1c68", "key": "2f6e9d862e6f30509341a142b06aa7df" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        autostart: false,
+        cast: {},
+        sharing: {}
+    });
+</script>
+</html>

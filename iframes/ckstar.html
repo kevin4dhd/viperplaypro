@@ -1,0 +1,51 @@
+
+<meta name="robots" content="noindex" />
+<meta name="referrer" content="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.5.1/shaka-player.compiled.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-shaka@latest/build/p2p-media-loader-shaka.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<style>
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; background-color: #000;
+    margin: 0;
+}
+#player {
+    width: 100vw;
+    height: 100%;
+    //max-height: 100vh;
+    //max-width: 177.78vh;
+    //margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; background-color: #000;
+    right: 0;
+}
+</style>
+<body oncontextmenu="return false;">
+<div id="player"></div>
+<script type="text/javascript">
+    function getParameterByName(name){name=name.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var regex=new RegExp("[\\?&]"+name+"=([^&#]*)"),results=regex.exec(location.search);return results===null?"":decodeURIComponent(results[1].replace(/\+/g," "));} //var src=getParameterByName('p');var cv=getParameterByName('cv');
+var src="3352b072226a36ff2e62ee7ec6871195820eecd5bc29e3f1dbdf71cbe1316f0dG8VIWjQtsxOJ4YZtmFAXgwtMWFLJrmNfGCbJDMteFFFciiJLGqdi80vZpvinYncLIdA7PpFWBOcj7/3lD3xi8iUi6mb6Ouhd4KsT6jR9XzC0BkTLZvb1Utn3AJEzQpujleoEQLHgxXeJK+N12tGK1vX4yD2D3mQV6FL2BR43FfjUqs6hWeGeLMDEiN4+Bkp3F631f8NRtBAPlOKc46MsrQ==";
+var cv="89d72496fada247ea30cd1a02fd5ccec3cb0d560aecf1d7bbc6da25c31017a47b7QaBIXLxMko9mCjdVxbnzKHiq4XwgyFeQ1RjGJHtShh2Licj/5GeukHSKm2oUEvjm+I45V4ClXRr3YwrSA1L22BdJ8uqMtDwpJvkAVC3lk=";
+var title = "Reproductor Star+ CK";
+</script>
+<script src="clap.js"></script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+<head>
+</head>
+<script src="https://ssl.p.jwpcdn.com/player/v/8.24.0/jwplayer.js"></script>
+<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
+
+ 
+<body>
+<div id="player">Cargando...</div>
+<script>
+var playerInstance=jwplayer("player");
+playerInstance.setup( {
+
+	playlist: [ {
+	title : "REPRODUCTOR | ViperPlay",
+	description: "EN VIVO",
+		"sources": [ {
+			"default": false, "file": atob("aHR0cHM6Ly9lZGdlLWxpdmUxMi1zbC5jdmF0dHYuY29tLmFyL2xpdmUvYzNlZHMvRm94U3BvcnRzMkhEL1NBX0xpdmVfZGFzaF9lbmNfMkEvRm94U3BvcnRzMkhELm1wZA=="), "drm": {
+				"widevine": {
+					 "url": atob('Ly90ZXVkeW5lYS53ZWJjaW5kYXJpby5jb20vbWVnYXR2LnBocA==')
+				}
+			}
+			, "label": "0", "type": "mpd"
+		}
+		]
+	}
+	], width: "100%",  height: "100%", aspectratio: "16:9", autostart: false, cast: {}
+	, sharing: {}
+}
+);
+</script>
+</html>

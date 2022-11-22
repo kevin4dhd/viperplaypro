@@ -1,0 +1,57 @@
+.articulos {
+    margin: auto;
+    overflow: auto;
+
+  
+    min-height: 100px;
+
+    color: black;
+}
+.buscador_articulo {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+}
+.buscador_articulo button {
+    position: relative;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--bg-segundary);
+}
+.buscador_articulo button svg {
+    height: 25px;
+    color: white;
+}
+
+.articulos table {
+    min-width: 700px;
+    width: 100%;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.articulos table tr td {
+    padding-bottom: 25px;
+    width: 50px;
+}
+
+.articulos table tr td .botones {
+    display: block;
+    padding: 20px;
+}
+.articulos table tr td .boton {
+    width:75%;
+    margin: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    align-items: center;
+    background-color: var(--bg-segundary);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 10px;
+}
+.articulos table tr td .boton:nth-child(1) {
+    background-color: #2ecc71;
+  }

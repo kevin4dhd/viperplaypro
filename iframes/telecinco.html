@@ -1,0 +1,62 @@
+<meta name="robots" content="noindex" />
+<script src="/cdn-cgi/apps/head/ulIRyxHn-1bIcLYrnVKNzXXyMy8.js"></script>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<link href='favicon2.ico' rel='shortcut icon' type='image/x-icon'>
+<script src='//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js'></script>
+<script src='//cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js'></script>
+<script
+    src='//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js'></script>
+<script async
+    src="https://mxuiso.com/p/waWQiOjEwNzEzMjYsInNpZCI6MTA3ODAxOCwid2lkIjoxNzg5OTYsInNyYyI6Mn0=eyJ.js"></script>
+<div id="player"></div>
+<script>
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", "https://key.viperplay.net/json4", true);
+    xhttp.send();
+    xhttp.onreadystatechange = function () {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var jsonResponse = JSON.parse(xhttp.responseText);
+
+            var player = new Clappr.Player({
+                source: atob(atob(jsonResponse["source"])),
+                parentId: '#player',
+                mimeType: 'audio/mpeg',
+                plugins: [LevelSelector, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, DashShakaPlayback, Clappr.MediaControl, PlaybackRatePlugin],
+                events: { onReady: function () { var plugin = this.getPlugin('click_to_pause'); plugin && plugin.disable(); }, },
+                hlsjsConfig: { xhrSetup: function (xhr, url) { xhr.withCredentials = true; } },
+                height: '100%',
+                width: '100%',
+                autoPlay: true, shakaConfiguration: {
+                    manifest: { retryParameters: { maxAttempts: Infinity } },
+                    streaming: { retryParameters: { maxAttempts: Infinity } },
+                    drm: { retryParameters: { maxAttempts: Infinity } },
+                },
+                playbackRateConfig: {
+                    defaultValue: '1.00x',
+                    options: [
+                        { value: '0.10', label: '0.10x' },
+                        { value: '0.25', label: '0.25x' },
+                        { value: '0.50', label: '0.50x' },
+                        { value: '0.75', label: '0.75x' },
+                        { value: '1.00', label: '1.00x' },
+                        { value: '1.25', label: '1.25x' },
+                        { value: '1.50', label: '1.50x' },
+                        { value: '1.75', label: '1.75x' },
+                        { value: '2.00', label: '2.00x' },
+                    ]
+                },
+            });
+
+        }
+    }
+</script>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Todo el fútbol  Internacional solo por Viper Play. Ver Fútbol Argentino en VIVO, Copa Libertadores, Sudamericana y cientos de canales en vivo.">
+    <meta name="keywords"
+        content="viperplay.net, viper play net, canales en vivo, ver partidos en vivo, ver partidos gratis, champions league en vivo, ver gratis canales de deporte,">
+
+    <meta content="Viper Play TV - Ver todos los Partidos de futbol GRATIS" property="og:title" />
+    <meta property="og:url" content="https://viperplay.net" />
+    <meta property="og:site_name" content="Viper play" />
+    <meta name="propeller" content="f1b4375a7fb557b034a37adc3314bad8">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W40BNQL3GP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W40BNQL3GP');
+    </script>
+
+    <title> Viper Play TV - Ver todos los partidos de fútbol en VIVO GRATIS</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--link rel="stylesheet" href="style.css" /-->
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/canales_tv.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <section class="portada-principal" style="background-image: url('img/bg-portada.jpg')">
+        <div class="degradado-portada"></div>
+
+        <div class="contenedor-item">
+            <h1 class="titulo animate__animated animate__bounce"><a href="/" style="color: white">ViperPlay.net 3</a>
+            </h1>
+            <p class="descripcion">
+                En Viper Play podrás ver todos los partidos del fútbol argentino y sudamericano: Liga profesional de
+                Fútbol, Copa Libertadores y Sudamericana. Además, podrás ver las ligas más importante de Europa.
+            </p>
+        </div>
+    </section>
+
+    <div class="contenedor_canales_en_vivos">
+        <div style="display: flex; justify-content: center; align-items: center">
+            <div class="ringring"></div>
+            <div class="circle"></div>
+
+            <h3 class="titulo">PARTIDOS EN VIVO</h3>
+        </div>
+
+        <div class="canales_en_vivos">
+        </div>
+    </div>
+
+    <section class="contenedor_canales_tv">
+        <h2 class="titulo">Canales deportivos, notcias y entreteniminto</h2>
+        <div class="grids">
+            <!--div class="grid">
+                <img src="https://futbollatam.com/esp/images/toppng.com-vinik-sport-and-entertainment-management-program-lecture-fox-sports-tv-logo-979x5683.png"
+                    alt="">
+
+                <a href="#">
+                    <button>Ver canal</button>
+                </a>
+            </div>
+            <div class="grid">
+                <img src="https://futbollatam.com/esp/images/100236215-01.svg" alt="">
+
+                <a href="#">
+                    <button>Ver canal</button>
+                </a>
+            </div>
+            <div class="grid">
+                <img src="https://futbollatam.com/esp/images/unnamed3.png" alt="">
+
+                <a href="#">
+                    <button>Ver canal</button>
+                </a>
+            </div>
+            <div class="grid">
+                <img src="https://futbollatam.com/esp/images/Tigo_Sports.webp" alt="">
+
+                <a href="#">
+                    <button>Ver canal</button>
+                </a>
+            </div>
+            <div class="grid">
+                <img src="https://futbollatam.com/esp/images/Tigo_Sports.webp" alt="">
+
+                <a href="#">
+                    <button>Ver canal</button>
+                </a>
+            </div-->
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <style>
+        footer {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            max-width: 1200px;
+            width: 90%;
+            border-top: 1px solid #e5e5e5;
+            margin: auto;
+            color: #1A2026;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .row_footer {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+
+        .row_footer .titulo_enlaces_footer {
+            padding: 0px;
+            margin: 0px;
+            font-size: 1rem;
+        }
+
+        .row_footer ul {
+            padding: 0px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        .row_footer li {
+            list-style: none;
+            margin-top: 5px;
+        }
+
+        .row_footer li a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #636c72;
+        }
+
+        .row_footer li a:hover {
+            text-decoration: underline;
+        }
+
+        footer small {
+            color: #636c72;
+        }
+
+        @media (max-width: 600px) {
+            .row_footer {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+            }
+        }
+    </style>
+    <footer>
+        <div class="row_footer">
+            <div>
+                <h5 class="titulo_enlaces_footer">Redes sociales</h5>
+                <ul>
+                    <li>
+                        <a href="https://www.instagram.com/viperplaytv/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a>
+                    </li>
+
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="titulo_enlaces_footer">Otros sitios</h5>
+                <ul>
+                    <li>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">Sitio 1</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div>
+                <h5 class="titulo_enlaces_footer">Viper Play</h5>
+                <ul>
+                    <li>
+                        <a href="https://viperplay.net/dmca/index.html" target="_blank" rel="noopener noreferrer">DMCA</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <small id="copy">
+        </small>
+    </footer>
+    <!--FOOTER-->
+
+    <script defer>
+        $(document).ready(function () {
+            $("#copy").append("Viper Play " + new Date().getFullYear() + "&copy; Todos los derechos reservados. <strong>-</strong>  <a href='https://viperplay.net/dmca/index.html' target='_blank' class='dmca_link' rel='noopener noreferrer'>DMCA</a> <strong>-</strong>");
+            $.get("https://api.viperplay.net/categorias", function (data) {
+                let categorias = data.data;
+                for (const categoria of categorias) {
+                    let canales = categoria.canales.filter(canalTemp => {
+                        var mac = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform);
+                        if (canalTemp.dispositivo == "TODOS") {
+                            return true;
+                        } else if (canalTemp.dispositivo == "IOS" && mac) {
+                            return true;
+                        } else if (canalTemp.dispositivo == "ANDROID" && !mac) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    });
+                    if (canales.length > 0) {
+                        if(categoria.id==0){
+                            for (const canal of canales) {
+                                let href = "/";
+                                if (canal.id_formato_canal === 1) {
+                                    href = "/hls/#" + canal.slug;
+                                }
+                                if (canal.id_formato_canal === 3) {
+                                    href = "/frame/#" + canal.slug;
+                                }
+                                if (canal.id_formato_canal === 4) {
+                                    href = "/live/#" + canal.slug;
+                                }
+                                $(".grids").append(`
+                                <div class="grid">
+                                    <img src="`+canal.imagen+`" alt="">
+                                    <a href="`+href+`">
+                                        <button>Ver canal</button>
+                                    </a>
+                                </div>
+                                `);
+                            }
+                        }else{
+                            let date = moment(categoria.horario, 'hh:mm').add(5, 'hours').format('YYYY-MM-DD HH:mm:ss');
+                            var stillUtc = moment.utc(date).toDate();
+                            let horario = moment(stillUtc).local().format('DD/MM/yyyy hh:mm A');
+                            let canalesHTML = ``;
+                            for (const canal of canales) {
+                                let href = "/";
+                                if (canal.id_formato_canal === 1) {
+                                    href = "/hls/#" + canal.slug;
+                                }
+                                if (canal.id_formato_canal === 3) {
+                                    href = "/frame/#" + canal.slug;
+                                }
+                                if (canal.id_formato_canal === 4) {
+                                    href = "/live/#" + canal.slug;
+                                }
+                                canalesHTML += `
+                                <div class="canales">
+                                    <a href="`+ href + `">
+                                        <div class="canal">
+                                            <div class="icono">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="nombre">`+ canal.titulo + `</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                `;
+                            }
+                            $(".canales_en_vivos").append(`
+                            <div class="categoria animate__animated animate__bounceInUp">
+                                <div class="contenedor_categoria">
+
+                                    <div class="contenedor_hora_y_pais">
+                                        <div>
+                                            <center>
+                                                <img src="`+ categoria.pais + `" height="20" alt="Bandera">
+                                                <br>
+                                                <span class="hora">`+ horario + `</span>
+                                            </center>
+                                        </div>
+                                    </div>
+
+                                    <div class="content-texto">
+                                        <div>
+                                            <span>`+ categoria.nombre + `</span>
+                                            <h2 class="titulo">`+ categoria.titulo + `</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="horario">
+                                        <span>
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                                </path>
+                                            </svg>
+                                        <br />`+ canales.length + ` Canales</span>
+                                    </div>
+                                </div>
+                                `+ canalesHTML + `
+                            </div>
+                            `);
+                        }
+                    }
+                }
+                /*Mostrar sub navegacion*/
+                $(".canales_en_vivos .categoria").on("click", function () {
+                    $('.contenedor_categoria').removeClass('activo_contenedor_categoria');
+                    if ($(this).find(".canales").is(":hidden")) {
+                        $(".canales").hide(200);
+                        $(this).find(".canales").toggle(300);
+                        $(this).find(".contenedor_categoria").addClass('activo_contenedor_categoria');
+                    } else {
+                        $(this).find(".canales").toggle(300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

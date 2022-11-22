@@ -1,0 +1,46 @@
+
+<meta name="robots" content="noindex" />
+<meta name="referrer" content="no-referrer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/clappr/dash-shaka-playback@latest/dist/dash-shaka-playback.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.5.1/shaka-player.compiled.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clappr-pip-plugin@latest/dist/clappr-pip-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/clappr/clappr-level-selector-plugin@latest/dist/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p2p-media-loader-shaka@latest/build/p2p-media-loader-shaka.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+<style>
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; background-color: #000;
+    margin: 0;
+}
+#player {
+    width: 100vw;
+    height: 100%;
+    //max-height: 100vh;
+    //max-width: 177.78vh;
+    //margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; background-color: #000;
+    right: 0;
+}
+</style>
+<body oncontextmenu="return false;">
+<div id="player"></div>
+<script type="text/javascript">
+    function getParameterByName(name){name=name.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var regex=new RegExp("[\\?&]"+name+"=([^&#]*)"),results=regex.exec(location.search);return results===null?"":decodeURIComponent(results[1].replace(/\+/g," "));} //var src=getParameterByName('p');var cv=getParameterByName('cv');
+var src="c3b282822f5af94901f445da9e8d8f60bf2e5040f0fd83a21a3ed0ab68334f05lPEMjtl5tYuc24oCTiPHKgf3+VFjaRNIrNwjkn+T9Nb3SOwMHGYOORV8ft6NHh14gyhAE2jLncXKz554vnxYa4arShbmWkZSZRRyMVhtpZLv/IRTycYjpOi8g5GJY+f7ALM1g9OWY4TPYyUxKgH8QbR/qAmsWFkgjjICV2aR1ccBrlnJ1pMiLOH8OlQfkSDiBhuRr8q1lwZ/73DUb/Z/Jg==";
+var cv="70e3992ec7f95f288be0aa7987c9079763515edec360e64f962ba26c9edef597h1vFDpMg9C2slXyHBP5mrRuPPA/Bu71pozXzPJeZEvRm9AVrmzUIvRJXJrL7vVbida1SsyKmFc7ae5Gd6wZFKVE1u5sa7DP0ggRTG/isBZg=";
+var title = "Reproductor Star+ CK";
+</script>
+<script src="clap.js"></script>

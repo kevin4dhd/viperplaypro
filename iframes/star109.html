@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+</head>       
+<style type="text/css">
+body {
+   margin: 0;
+   padding: 0;
+}
+</style>
+
+<script src="//ssl.p.jwpcdn.com/player/v/8.25.1/jwplayer.js"></script>
+<script> jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+<div id="player"></div>
+<script>
+    var playerInstance = jwplayer("player");
+
+    playerInstance.setup({
+
+        playlist: [{
+            "title": "Mega Deportes | Star+",
+            "description": "Mirar Star+ de manera gratuita",
+            "image": "https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/506EB55C9B7E461FE226E13931E30538DF8E7B39AB719E640CFE7A7B894AEB1A/scale?width=1920&aspectRatio=1.78&format=jpeg",
+            "sources": [
+                {
+                    "default": false,
+                    "type": "dash",
+                    "file": 'https://live-llc-sa-east-2.media.starott.com/gru1/qb01/starplus/event/2022/06/07/Alemanha_x_Inglaterra_20220607_1654621489687/ctr-all-sliding.m3u8?v=1&hash=5265fd13f57070c8e9fbafe6a1eea7dca117ff03',
+                    "drm": {
+                        "clearkey": { "keyId": "79a0f3cd3e504378918b30297f9cd18e", "key": "bf38207bcca71998b7d8ad025b6615ba" }
+                    },
+                    "label": "0"
+                }
+            ]
+        }],
+        width: "100%",
+        height: "100%",
+        aspectratio: "16:9",
+        autostart: false,
+        cast: {},
+        sharing: {}
+    });
+</script>
+</html>

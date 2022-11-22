@@ -1,0 +1,28 @@
+
+<html>
+    <head>
+    <meta name=theme-color content=black>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=referrer content=never>
+    <meta name=referrer content=no-referrer>
+    <meta content="width=device-width, initial-scale=1" name=viewport>
+    <style>body{margin:0;padding:0}</style><script src="//cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/level-selector@latest/dist/level-selector.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr-chromecast-plugin@latest/dist/clappr-chromecast-plugin.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr-pip@latest/dist/clappr-pip.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/dash-shaka-playback@latest/dist/dash-shaka-playback.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-core@latest/build/p2p-media-loader-core.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/p2p-media-loader-hlsjs@latest/build/p2p-media-loader-hlsjs.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/clappr-playback-rate-plugin@latest/dist/clappr-playback-rate-plugin.min.js"></script>
+    </head>
+    <body data-autofill-highlight=false>
+    <div id=player></div>
+    <script>
+    var player = new Clappr.Player({parentId: "#player", mimeType: "application/dash+xml", source: "https://live-llc-sa-east-2.media.starott.com/gru1/qb02/starplus/event/2022/06/03/Blgica_vs_Pases_Bajos_20220603_1654275623035/ctr-all-sliding.m3u8?v=1&hash=fd3425628efc0b75c957a70fc2aff0176bf17161", poster:"https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/83CFC318E55C73987706C1B65F898410612769B4CDF267B6DCBB1BCDC64FD4C9/scale?width=720&aspectRatio=1.78&format=jpeg", plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl], events: {onReady: function () {
+          var ascia = this.getPlugin("click_to_pause");
+          ascia && ascia.disable();
+        }}, width: "100%", height: "100%", autoPlay: false, shakaConfiguration: {drm: {clearKeys: {"1a4c8d6d94544883b6b348ae3e740207": "ba49fb456606ce6deb17c55d432b001a"}}}, playbackRateConfig: {defaultValue: "1.00x", options: [{value: "0.10", label: "0.10x"}, {value: "0.25", label: "0.25x"}, {value: "0.50", label: "0.50x"}, {value: "0.75", label: "0.75x"}, {value: "1.00", label: "1.00x"}, {value: "1.25", label: "1.25x"}, {value: "1.50", label: "1.50x"}, {value: "1.75", label: "1.75x"}, {value: "2.00", label: "2.00x"}]}});
+    ;
+    </script><noscript class=psa_add_styles><style>body{margin:0;padding:0}</style></noscript><script data-pagespeed-no-defer>(function(){function b(){var a=window,c=e;if(a.addEventListener)a.addEventListener("load",c,!1);else if(a.attachEvent)a.attachEvent("onload",c);else{var d=a.onload;a.onload=function(){c.call(this);d&&d.call(this)}}};var f=!1;function e(){if(!f){f=!0;for(var a=document.getElementsByClassName("psa_add_styles"),c=0,d;d=a[c];++c)if("NOSCRIPT"==d.nodeName){var k=document.createElement("div");k.innerHTML=d.textContent;document.body.appendChild(k)}}}function g(){var a=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||null;a?a(function(){window.setTimeout(e,0)}):b()}
+    var h=["pagespeed","CriticalCssLoader","Run"],l=this;h[0]in l||!l.execScript||l.execScript("var "+h[0]);for(var m;h.length&&(m=h.shift());)h.length||void 0===g?l[m]?l=l[m]:l=l[m]={}:l[m]=g;})();
+    pagespeed.CriticalCssLoader.Run();</script>
